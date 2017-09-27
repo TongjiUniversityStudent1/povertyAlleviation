@@ -256,7 +256,7 @@ $(document).ready(function(){
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/fmtest/constructunit/find',
+            url: '/fmtest/constructunit/find',
             data: postBody,
             dataType: 'json',
             success: function(data){      
@@ -300,7 +300,7 @@ function applyPay(obj){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/app/pay',
+        url: '/fmtest/app/pay',
         data: postBody,
         dataType: 'json',
         success: function(data){ 

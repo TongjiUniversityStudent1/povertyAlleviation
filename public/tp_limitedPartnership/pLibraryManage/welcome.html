@@ -396,7 +396,7 @@ $(document).ready(function(){
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/fmtest/app/payrecord',
+            url: '/fmtest/app/payrecord',
             data: postBody,
             dataType: 'json',
             success: function(data){      
@@ -456,7 +456,7 @@ function createBill(){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/create/digitalbill',
+        url: '/fmtest/create/digitalbill',
         data: postBody,
         dataType: 'json',
         success: function(data){      

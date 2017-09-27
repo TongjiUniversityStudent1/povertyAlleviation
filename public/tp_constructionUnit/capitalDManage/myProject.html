@@ -362,7 +362,7 @@ $(document).ready(function(){
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/fmtest/constructunit/find',
+            url: '/fmtest/constructunit/find',
             data: postBody,
             dataType: 'json',
             success: function(data){      
@@ -448,7 +448,7 @@ function add(obj){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/fundstructure/findbyid',
+        url: '/fmtest/fundstructure/findbyid',
         data: postBody,
         dataType: 'json',
         success: function(data){   
@@ -475,7 +475,7 @@ function agree(){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/countyplatform/subscribe',
+        url: '/fmtest/countyplatform/subscribe',
         data: postBody,
         dataType: 'json',
         success: function(data){      
@@ -503,7 +503,7 @@ function reject(){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/countyplatform/subscribe',
+        url: '/fmtest/countyplatform/subscribe',
         data: postBody,
         dataType: 'json',
         success: function(data){      

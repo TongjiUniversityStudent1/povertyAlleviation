@@ -302,7 +302,7 @@ $(document).ready(function(){
   };
   $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/users/login',
+      url: '/users/login',
       data: postBody,
       dataType: 'json',
       success: function(data){        
@@ -349,7 +349,7 @@ function lowincomeapp(){
   };
   $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/patest/publicity/application',
+      url: '/patest/publicity/application',
       data: postBody,
       dataType: 'json',
       success: function(data){    

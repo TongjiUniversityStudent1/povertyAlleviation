@@ -401,7 +401,7 @@ $(document).ready(function(){
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/fmtest/app/payrecord',
+            url: '/fmtest/app/payrecord',
             data: postBody,
             dataType: 'json',
             success: function(data){      
@@ -449,7 +449,7 @@ function applyPay(obj){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/app/pay',
+        url: '/fmtest/app/pay',
         data: postBody,
         dataType: 'json',
         success: function(data){   

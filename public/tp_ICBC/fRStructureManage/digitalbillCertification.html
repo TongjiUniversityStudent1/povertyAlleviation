@@ -413,7 +413,7 @@ $(document).ready(function(){
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/fmtest/ICBC/find/digitalbill',
+            url: '/fmtest/ICBC/find/digitalbill',
             data: postBody,
             dataType: 'json',
             success: function(data){      
@@ -461,7 +461,7 @@ function add(obj){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/ICBC/agree/digitalbill',
+        url: '/fmtest/ICBC/agree/digitalbill',
         data: postBody,
         dataType: 'json',
         success: function(data){      

@@ -364,7 +364,7 @@ $(document).ready(function(){
   };
   $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/patest/showtipoffs',
+      url: '/patest/showtipoffs',
       data: postBody,
       dataType: 'json',
       success: function(data){        
@@ -432,7 +432,7 @@ $(document).ready(function(){
             };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/patest/findById',
+            url: '/patest/findById',
             data: postBody,
             dataType: 'json',
             success: function(data){ 
@@ -499,7 +499,7 @@ $(document).ready(function(){
         alert(JSON.stringify(postBody))
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/patest/report/comment',
+            url: '/patest/report/comment',
             data: postBody,
             dataType: 'json',
             success: function(data){  

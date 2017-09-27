@@ -391,7 +391,7 @@ desired effect
     };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/patest/findById',
+        url: '/patest/findById',
         data: postBody,
         dataType: 'json',
         success: function(data){  
@@ -430,7 +430,7 @@ desired effect
       };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/patest/report',
+        url: '/patest/report',
         data: postBody,
         dataType: 'json',
         success: function(data){  

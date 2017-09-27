@@ -151,7 +151,7 @@
         console.log(postBody.username + " " + postBody.password+" "+postBody.role);
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/users/register',
+            url: '/users/register',
             data: postBody,
             dataType: 'json',
             success: function(data){
@@ -172,7 +172,7 @@
         console.log(postBody.username + " " + postBody.password);
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/users/login',
+            url: '/users/login',
             data: postBody,
             dataType: 'json',
             success: function(data){        
@@ -180,7 +180,8 @@
                 var jsonstr=JSON.stringify(data);
                 console.log(jsonstr); 
                  var str = document.cookie;
-                if(str==""){
+                 //str==""
+                if(false){
                  alert("请开启您浏览器cookie选项");
                 }else{
                  if(data.role=="01"){

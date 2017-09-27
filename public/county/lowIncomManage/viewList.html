@@ -393,7 +393,7 @@ $(document).ready(function(){
   };
   $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/patest/county/find',
+      url: '/patest/county/find',
       data: postBody,
       dataType: 'json',
       success: function(data){        
@@ -437,7 +437,7 @@ $(document).ready(function(){
             };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/patest/findById',
+            url: '/patest/findById',
             data: postBody,
             dataType: 'json',
             success: function(data){ 

@@ -194,7 +194,7 @@ $(document).ready(function(){
   };
   $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/patest/city/find',
+      url: '/patest/city/find',
       data: postBody,
       dataType: 'json',
       success: function(data){        
@@ -244,7 +244,7 @@ $(document).ready(function(){
             };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/patest/city/approval',
+            url: '/patest/city/approval',
             data: postBody,
             dataType: 'json',
             success: function(data){ 

@@ -345,7 +345,7 @@ $(document).ready(function(){
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/fmtest/county/search/projectlibrary',
+            url: '/fmtest/county/search/projectlibrary',
             data: postBody,
             dataType: 'json',
             success: function(data){      
@@ -394,7 +394,7 @@ function addProject(){
       };
       $.ajax({
           type: 'POST',
-          url: 'http://localhost:3000/fmtest/create/project',
+          url: '/fmtest/create/project',
           data: postBody,
           dataType: 'json',
           success: function(data){      

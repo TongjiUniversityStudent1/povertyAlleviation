@@ -312,7 +312,7 @@ $(document).ready(function(){
   };
   $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/dbtest/charityAdmin/find',
+      url: '/dbtest/charityAdmin/find',
       data: postBody,
       dataType: 'json',
       success: function(data){        
@@ -371,7 +371,7 @@ function donate(){
   alert(JSON.stringify(postBody));
   $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/dbtest/charity/donate',
+      url: '/dbtest/charity/donate',
       data: postBody,
       dataType: 'json',
       success: function(data){      

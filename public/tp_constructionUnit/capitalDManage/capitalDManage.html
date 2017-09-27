@@ -289,7 +289,7 @@ $(document).ready(function(){
         };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/fmtest/constructunit/find',
+            url: '/fmtest/constructunit/find',
             data: postBody,
             dataType: 'json',
             success: function(data){      
@@ -387,7 +387,7 @@ function add(obj){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/project/findbyid',
+        url: '/fmtest/project/findbyid',
         data: postBody,
         dataType: 'json',
         success: function(data){   
@@ -408,7 +408,7 @@ function newProgressApp(){
   };
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/fmtest/newprogress/app',
+        url: '/fmtest/newprogress/app',
         data: postBody,
         dataType: 'json',
         success: function(data){      

@@ -217,7 +217,7 @@ $(document).ready(function(){
   };
   $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/dbtest/lowincome/find',
+      url: '/dbtest/lowincome/find',
       data: postBody,
       dataType: 'json',
       success: function(data){        
@@ -287,7 +287,7 @@ $(document).ready(function(){
             };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/dbtest/lowincome/accept',
+            url: '/dbtest/lowincome/accept',
             data: postBody,
             dataType: 'json',
             success: function(data){  
@@ -311,7 +311,7 @@ $(document).ready(function(){
             };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/dbtest/lowincome/accept',
+            url: '/dbtest/lowincome/accept',
             data: postBody,
             dataType: 'json',
             success: function(data){  
