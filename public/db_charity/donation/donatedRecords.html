@@ -204,38 +204,23 @@ desired effect
   </ul>
 
   <!-- Tab panes -->
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">最近捐赠</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">所有捐赠记录</a></li>
+  </ul>
+ <br>
+  <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
-          <table class="table table-hover c">
-           <thead>
-            <tr>
-              <th>身份证号</th>
-              <th>捐助原因</th>
-              <th>捐赠时间</th>
-              <th>折合金额（元）</th>
-              <th>状态</th>
-              <th>操作人</th>
-            </tr>
-          </thead>
-          <tbody id="latest"></tbody>
-        </table>
+        <div id="latest"></div>
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
-          <table class="table table-hover c">
-           <thead>
-            <tr>
-              <th>身份证号</th>
-              <th>捐助原因</th>
-              <th>捐赠时间</th>
-              <th>折合金额（元）</th>
-              <th>状态</th>
-              <th>操作人</th>
-            </tr>
-          </thead>
-          <tbody id="allrecord"></tbody>
-        </table>
+        <div id="allrecord"></div>
         </div>
     </div>
+  </div>
   </div>
 
 </div>
@@ -332,23 +317,166 @@ $(document).ready(function(){
           var str;
           if(data[0].status=="1"){
             str="刚发放，捐助 对象未选择接收";
+          $('<div class="well well-lg">'+
+              '<table class="table table-hover">'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>身份证号<strong></td>'
+                  +'<td class="text-left" colspan="5"><span id="txid0">' + data[0].appUserId +
+                      '</span></td>'
+                  +'<td class="text-left"><strong>捐赠理由</strong></td><td class="text-left"><span id="cangdanId">' + data[0].reason +
+            '</span></td>'
+                  +'<td class="text-left"><strong>捐赠时间</strong></td>'
+                  +'<td class="text-left"><span id="time0">'+moment(data[0].createAt).format('YYYY-MM-DD')+
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠金额<strong></td>'+
+                    '<td class="text-left"><span id="money">' + data[0].amount +
+                      '</span></td>'+
+                    '<td class="text-left"><strong>捐赠状态</strong></td>'+
+                    '<td class="text-left"><span>' + data[0].str +
+            '</span></td>'+
+                   '<td class="text-left"><strong>处理人员</strong></td>'+
+                   '<td class="text-left"><span id="cangku">' + data[0].userId +
+            '</span></td></tr>'+
+                  '</tbody></table>').appendTo("#latest");
           }else if(data[0].status=="2"){
-            str="帮扶对象选择接受"
+            str="帮扶对象选择接受";
+          $('<div class="well well-lg">'+
+              '<table class="table table-hover">'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>身份证号<strong></td>'
+                  +'<td class="text-left" colspan="5"><span id="txid">' + data[0].appUserId +
+                      '</span></td>'
+                  +'<td class="text-left"><strong>捐赠理由</strong></td><td class="text-left"><span id="cangdanId">' + data[0].reason +
+            '</span></td>'
+                  +'<td class="text-left"><strong>捐赠时间</strong></td>'
+                  +'<td class="text-left"><span id="time">'+moment(data[0].createAt).format('YYYY-MM-DD')+
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠金额<strong></td>'+
+                    '<td class="text-left"><span id="money">' + data[0].amount +
+                      '</span></td>'+
+                    '<td class="text-left"><strong>捐赠状态</strong></td>'+
+                    '<td class="text-left"><span>' + str +
+            '</span></td>'+
+                 '</tr></tbody>'+
+                 '<tbody><tr>'+
+                   '<td class="text-left"><strong>处理人员</strong></td>'+
+                   '<td class="text-left"><span id="cangku">' + data[0].userId +
+            '</span></td></tr>'+
+                  '</tbody></table>').appendTo("#latest");
           }else if(data[0].status=="3"){
-            str="帮扶对象确认接收到捐助"
+            str="帮扶对象确认接收到捐助";
+          $('<div class="well well-lg">'+
+              '<table class="table table-hover">'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠查询序列号<strong></td>'
+                  +'<td class="text-left" colspan="5"><span id="search">' + data[0].donateTransId +
+                      '</span></td>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>身份证号<strong></td>'
+                  +'<td class="text-left"><span id="txid">' + data[0].appUserId +
+                      '</span></td>'
+                  +'<td class="text-left"><strong>捐赠理由</strong></td><td class="text-left"><span id="cangdanId">' + data[0].reason +
+            '</span></td>'
+                  +'<td class="text-left"><strong>捐赠时间</strong></td>'
+                  +'<td class="text-left"><span id="time">'+moment(data[0].createAt).format('YYYY-MM-DD')+
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠金额<strong></td>'+
+                    '<td class="text-left"><span id="money">' + data[0].amount +
+                      '</span></td>'+
+                    '<td class="text-left"><strong>捐赠状态</strong></td>'+
+                    '<td class="text-left"><span">' + str +
+            '</span></td>'+
+                   '<td class="text-left"><strong>处理人员</strong></td>'+
+                   '<td class="text-left"><span id="cangku">' + data[0].userId +
+            '</span></td></tr>'+
+                  '</tbody></table>').appendTo("#latest");
           }else if(data[0].status=="4"){
             str="帮扶对象举报"
+            str="帮扶对象确认接收到捐助";
+          $('<div class="well well-lg">'+
+              '<table class="table table-hover">'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠查询序列号<strong></td>'
+                  +'<td class="text-left" colspan="5"><span id="search' + o + '">' + data[o].donateTransId +
+                      '</span></td>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>身份证号<strong></td>'
+                  +'<td class="text-left"><span id="txid' + o + '">' + data[o].appUserId +
+                      '</span></td>'
+                  +'<td class="text-left"><strong>捐赠理由</strong></td><td class="text-left"><span id="cangdanId' + o + '">' + data[o].reason +
+            '</span></td>'
+                  +'<td class="text-left"><strong>捐赠时间</strong></td>'
+                  +'<td class="text-left"><span id="time' + o + '">'+moment(data[0].createAt).format('YYYY-MM-DD')+
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠金额<strong></td>'+
+                    '<td class="text-left"><span id="money' + o + '">' + data[o].amount +
+                      '</span></td>'+
+                    '<td class="text-left"><strong>捐赠状态</strong></td>'+
+                    '<td class="text-left"><span id="' + o + '">' + str +
+            '</span></td>'+
+                    '<td class="text-left"><strong>申请理由</strong></td>'+
+                    '<td class="text-left"><span id="reason' + o + '">' + data[o].reason +
+                      '</span></td>'+
+                 '</tr></tbody>'+
+                 '<tbody><tr>'+
+                   '<td class="text-left"><strong>申请时间<strong></td>'+
+                   '<td class="text-left"><span id="type' + o + '">'+moment(data[o].appTime).format('YYYY-MM-DD')+'</span></td>'+
+                   '<td class="text-left"><strong>申请状态<strong></td>'+
+                   '<td class="text-left"><span id="chandi' + o + '">' + str +
+            '</span></td>'+
+                   '<td class="text-left"><strong>处理人员</strong></td>'+
+                   '<td class="text-left"><span id="cangku' + o + '">' + data[o].userId +
+            '</span></td></tr>'+
+                  '</tbody></table>').appendTo("#latest");
           }else{
             str="民政局处理举报"
+            str="帮扶对象确认接收到捐助";
+          $('<div class="well well-lg">'+
+              '<table class="table table-hover">'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠查询序列号<strong></td>'
+                  +'<td class="text-left" colspan="5"><span id="search' + o + '">' + data[o].donateTransId +
+                      '</span></td>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>身份证号<strong></td>'
+                  +'<td class="text-left"><span id="txid' + o + '">' + data[o].appUserId +
+                      '</span></td>'
+                  +'<td class="text-left"><strong>捐赠理由</strong></td><td class="text-left"><span id="cangdanId' + o + '">' + data[o].reason +
+            '</span></td>'
+                  +'<td class="text-left"><strong>捐赠时间</strong></td>'
+                  +'<td class="text-left"><span id="time' + o + '">'+moment(data[0].createAt).format('YYYY-MM-DD')+
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠金额<strong></td>'+
+                    '<td class="text-left"><span id="money' + o + '">' + data[o].amount +
+                      '</span></td>'+
+                    '<td class="text-left"><strong>捐赠状态</strong></td>'+
+                    '<td class="text-left"><span id="' + o + '">' + str +
+            '</span></td>'+
+                    '<td class="text-left"><strong>申请理由</strong></td>'+
+                    '<td class="text-left"><span id="reason' + o + '">' + data[o].reason +
+                      '</span></td>'+
+                 '</tr></tbody>'+
+                 '<tbody><tr>'+
+                   '<td class="text-left"><strong>申请时间<strong></td>'+
+                   '<td class="text-left"><span id="type' + o + '">'+moment(data[o].appTime).format('YYYY-MM-DD')+'</span></td>'+
+                   '<td class="text-left"><strong>申请状态<strong></td>'+
+                   '<td class="text-left"><span id="chandi' + o + '">' + str +
+            '</span></td>'+
+                   '<td class="text-left"><strong>处理人员</strong></td>'+
+                   '<td class="text-left"><span id="cangku' + o + '">' + data[o].userId +
+            '</span></td></tr>'+
+                  '</tbody></table>').appendTo("#latest");
           }
-              $('<tr>'
-              +'<td>'+data[0].appUserId+'</td>'
-              +'<td>'+data[0].reason+'</td>'
-              +'<td>'+moment(data[0].createAt).format('YYYY-MM-DD')+'</td>'
-              +'<td>'+data[0].amount+'</td>'
-              +'<td>'+str+'</td>'
-              +'<td>'+data[0].userId+'</td>'
-             +'</tr>').appendTo("#latest");
           if($("#latest").html()==""){
             $("#latest").html('<span style="color:#3c8dbc;">暂无捐赠记录。</span>');
           }
@@ -380,14 +508,33 @@ $(document).ready(function(){
                     }else{
                       str="民政局处理举报"
                     }
-                    $('<tr>'
-                    +'<td>'+data[o].appUserId+'</td>'
-                    +'<td>'+data[o].reason+'</td>'
-                    +'<td>'+moment(data[o].createAt).format('YYYY-MM-DD')+'</td>'
-                    +'<td>'+data[o].amount+'</td>'
-                    +'<td>'+str+'</td>'
-                    +'<td>'+data[o].userId+'</td>'
-                   +'</tr>').appendTo("#allrecord");
+            $('<div class="well well-lg">'+
+              '<table class="table table-hover">'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠查询序列号<strong></td>'
+                  +'<td class="text-left" colspan="5"><span id="search' + o + '">' + data[o].donateTransId +
+                      '</span></td>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>身份证号<strong></td>'
+                  +'<td class="text-left"><span id="txid' + o + '">' + data[o].appUserId +
+                      '</span></td>'
+                  +'<td class="text-left"><strong>捐赠理由</strong></td><td class="text-left"><span id="cangdanId' + o + '">' + data[o].reason +
+            '</span></td>'
+                  +'<td class="text-left"><strong>捐赠时间</strong></td>'
+                  +'<td class="text-left"><span id="time' + o + '">'+moment(data[0].createAt).format('YYYY-MM-DD')+
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>捐赠金额<strong></td>'+
+                    '<td class="text-left"><span id="money' + o + '">' + data[o].amount +
+                      '</span></td>'+
+                    '<td class="text-left"><strong>捐赠状态</strong></td>'+
+                    '<td class="text-left"><span id="' + o + '">' + str +
+                   '<td class="text-left"><strong>处理人员</strong></td>'+
+                   '<td class="text-left"><span id="cangku' + o + '">' + data[o].userId +
+            '</span></td></tr>'+
+            '</span></td>'+
+                  '</tbody></table>').appendTo("#allrecord");
                   }
                 $("#totalmoney").html(totalmoney);
                 if($("#allrecord").html()==""){

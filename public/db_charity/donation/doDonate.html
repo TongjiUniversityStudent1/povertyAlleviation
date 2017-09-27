@@ -333,7 +333,7 @@ $(document).ready(function(){
               //alert(data[o].id)
           }
           if($("#list").html()==""){
-            $("#list").html('<span style="color:#3c8dbc;">暂无低保帮扶记录。</span>');
+            $("#list").html('<span style="color:#3c8dbc;">暂无低保帮扶名单。</span>');
           }
       }
   }).error(function(err){
@@ -368,7 +368,6 @@ function donate(){
       comment:$("#comment").html(),
       amount:$("#goodsValues").val()
   };
-  alert(JSON.stringify(postBody));
   $.ajax({
       type: 'POST',
       url: '/dbtest/charity/donate',
