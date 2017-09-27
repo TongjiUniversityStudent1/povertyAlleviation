@@ -284,69 +284,11 @@ $(document).ready(function(){
               +'<td>'+str+'</td>'
               +'<td>'+data[o].CiId+'</td>'
              +'</tr>').appendTo("#verifing");
-            }else if(data[o].civilAffairsAgree == "1"){
-              str = "已通过审核";
-              $('<tr>'
-              +'<td><b>身份证号</b></td>'
-              +'<td id="userId'+o+'">'+data[o].userId+'</td>'
-              +'<td>'+data[o].name+'</td>'
-              +'<td>'+data[o].district+"/"+data[o].county+"/"+data[o].township+'</td>'
-              +'<td>'+data[o].familyNum+'</td>'
-              +'<td>'+data[o].averageIncome+'</td>'
-              +'<td>'+data[o].reason+'</td>'
-              +'<td>'+moment(data[o].appTime).format('YYYY-MM-DD')+'</td>'
-              +'<td>'+str+'</td>'
-              +'<td>'+data[o].CiId+'</td>'
-             +'</tr>').appendTo("#pass");
-            }else{
-              str = "未通过审核";
-              $('<tr>'
-              +'<td id="userId'+o+'">'+data[o].userId+'</td>'
-              +'<td>'+data[o].name+'</td>'
-              +'<td>'+data[o].district+"/"+data[o].county+"/"+data[o].township+'</td>'
-              +'<td>'+data[o].familyNum+'</td>'
-              +'<td>'+data[o].averageIncome+'</td>'
-              +'<td>'+data[o].reason+'</td>'
-              +'<td>'+moment(data[o].appTime).format('YYYY-MM-DD')+'</td>'
-              +'<td>'+str+'</td>'
-              +'<td>'+data[o].CiId+'</td>'
-             +'</tr>').appendTo("#reject");
-            }
-          //   $('<tr>'
-          //     +'<td><b>身份证号:</b></td>'
-          //   +'<td id="userId'+o+'" class="text-left">'+data[o].userId+'</td>'
-          //     +'<td><b>姓名:</b></td>'
-          //   +'<td class="text-left">'+data[o].name+'</td>'
-          //     +'<td><b>住址:</b></td>'
-          //   +'<td class="text-left">'+data[o].district+"/"+data[o].county+"/"+data[o].township+'</td>'
-          //     +'<td><b>家庭人数:</b></td>'
-          //   +'<td class="text-left">'+data[o].familyNum+'</td>'
-          // +'</tr>'
-          // +'<tr>'
-          //   +'<td><b>家庭人均收入:</b></td>'
-          //   +'<td>'+data[o].averageIncome+'</td>'
-          //     +'<td><b>申请理由:</b></td>'
-          //   +'<td>'+data[o].reason+'</td>'
-          //     +'<td><b>申请时间 :</b></td>'
-          //   +'<td>'+moment(data[o].appTime).format('YYYY-MM-DD')+'</td>'
-          //     +'<td><b>申请状态:</b></td>'
-          //   +'<td>'+str+'</td>'
-          // +'</tr>'
-          // +'<tr>'
-          //     +'<td><b>审核民政局编号:</b></td>'
-          //   +'<td>'+data[o].CiId+'</td>'
-          // +'</tr>').appendTo("#allRecord");
           $('<div class="well well-lg">'+
               '<table class="table table-hover">'
                 +'<tbody><tr>'
                   +'<td class="text-left"><strong>低保申请查询号<strong></td>'
-                  +'<td class="text-left"><span id="txid' + o + '">' + data[o].appTransId +
-                      '</span></td>'
-                +'</tr></tbody>'
-                +'<tbody><tr>'
-                +'<tbody><tr>'
-                  +'<td class="text-left"><strong>民政局走访查询号<strong></td>'
-                  +'<td class="text-left"><span id="txid' + o + '">' + data[o].visitTransId +
+                  +'<td class="text-left" colspan="6"><span id="txid' + o + '">' + data[o].appTransId +
                       '</span></td>'
                 +'</tr></tbody>'
                 +'<tbody><tr>'
@@ -380,6 +322,146 @@ $(document).ready(function(){
                    '<td class="text-left"><span id="cangku' + o + '">' + data[o].CiId +
             '</span></td></tr>'+
                   '</tbody></table>').appendTo("#allRecord");
+            }else if(data[o].civilAffairsAgree == "1"){
+              str = "已通过审核";
+              $('<tr>'
+              +'<td><b>身份证号</b></td>'
+              +'<td id="userId'+o+'">'+data[o].userId+'</td>'
+              +'<td>'+data[o].name+'</td>'
+              +'<td>'+data[o].district+"/"+data[o].county+"/"+data[o].township+'</td>'
+              +'<td>'+data[o].familyNum+'</td>'
+              +'<td>'+data[o].averageIncome+'</td>'
+              +'<td>'+data[o].reason+'</td>'
+              +'<td>'+moment(data[o].appTime).format('YYYY-MM-DD')+'</td>'
+              +'<td>'+str+'</td>'
+              +'<td>'+data[o].CiId+'</td>'
+             +'</tr>').appendTo("#pass");
+          $('<div class="well well-lg">'+
+              '<table class="table table-hover">'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>低保申请查询号<strong></td>'
+                  +'<td class="text-left" colspan="6"><span id="txid' + o + '">' + data[o].appTransId +
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>民政局走访查询号<strong></td>'
+                  +'<td class="text-left" colspan="6"><span id="txid' + o + '">' + data[o].visitTransId +
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>姓名<strong></td>'
+                  +'<td class="text-left"><span id="txid' + o + '">' + data[o].name +
+                      '</span></td>'
+                  +'<td class="text-left"><strong>身份证号</strong></td><td class="text-left"><span id="cangdanId' + o + '">' + data[o].userId +
+            '</span></td>'
+                  +'<td class="text-left"><strong>住址</strong></td>'
+                  +'<td class="text-left"><span id="shuliang' + o + '">' +data[o].district+"/"+data[o].county+"/"+data[o].township+
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>家庭人数<strong></td>'+
+                    '<td class="text-left"><span id="money' + o + '">' + data[o].familyNum +
+                      '</span></td>'+
+                    '<td class="text-left"><strong>家庭人均收入</strong></td>'+
+                    '<td class="text-left"><span id="pinming' + o + '">' + data[o].averageIncome +
+            '</span></td>'+
+                    '<td class="text-left"><strong>申请理由</strong></td>'+
+                    '<td class="text-left"><span id="guige' + o + '">' + data[o].reason +
+                      '</span></td>'+
+                 '</tr></tbody>'+
+                 '<tbody><tr>'+
+                   '<td class="text-left"><strong>申请时间<strong></td>'+
+                   '<td class="text-left"><span id="type' + o + '">'+moment(data[o].appTime).format('YYYY-MM-DD')+'</span></td>'+
+                   '<td class="text-left"><strong>申请状态<strong></td>'+
+                   '<td class="text-left"><span id="chandi' + o + '">' + str +
+            '</span></td>'+
+                   '<td class="text-left"><strong>审核民政局编号</strong></td>'+
+                   '<td class="text-left"><span id="cangku' + o + '">' + data[o].CiId +
+            '</span></td></tr>'+
+                  '</tbody></table>').appendTo("#allRecord");
+            }else{
+              str = "未通过审核";
+              $('<tr>'
+              +'<td id="userId'+o+'">'+data[o].userId+'</td>'
+              +'<td>'+data[o].name+'</td>'
+              +'<td>'+data[o].district+"/"+data[o].county+"/"+data[o].township+'</td>'
+              +'<td>'+data[o].familyNum+'</td>'
+              +'<td>'+data[o].averageIncome+'</td>'
+              +'<td>'+data[o].reason+'</td>'
+              +'<td>'+moment(data[o].appTime).format('YYYY-MM-DD')+'</td>'
+              +'<td>'+str+'</td>'
+              +'<td>'+data[o].CiId+'</td>'
+             +'</tr>').appendTo("#reject");
+          $('<div class="well well-lg">'+
+              '<table class="table table-hover">'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>低保申请查询号<strong></td>'
+                  +'<td class="text-left" colspan="6"><span id="txid' + o + '">' + data[o].appTransId +
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>民政局走访查询号<strong></td>'
+                  +'<td class="text-left" colspan="6"><span id="txid' + o + '">' + data[o].visitTransId +
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>姓名<strong></td>'
+                  +'<td class="text-left"><span id="txid' + o + '">' + data[o].name +
+                      '</span></td>'
+                  +'<td class="text-left"><strong>身份证号</strong></td><td class="text-left"><span id="cangdanId' + o + '">' + data[o].userId +
+            '</span></td>'
+                  +'<td class="text-left"><strong>住址</strong></td>'
+                  +'<td class="text-left"><span id="shuliang' + o + '">' +data[o].district+"/"+data[o].county+"/"+data[o].township+
+                      '</span></td>'
+                +'</tr></tbody>'
+                +'<tbody><tr>'
+                  +'<td class="text-left"><strong>家庭人数<strong></td>'+
+                    '<td class="text-left"><span id="money' + o + '">' + data[o].familyNum +
+                      '</span></td>'+
+                    '<td class="text-left"><strong>家庭人均收入</strong></td>'+
+                    '<td class="text-left"><span id="pinming' + o + '">' + data[o].averageIncome +
+            '</span></td>'+
+                    '<td class="text-left"><strong>申请理由</strong></td>'+
+                    '<td class="text-left"><span id="guige' + o + '">' + data[o].reason +
+                      '</span></td>'+
+                 '</tr></tbody>'+
+                 '<tbody><tr>'+
+                   '<td class="text-left"><strong>申请时间<strong></td>'+
+                   '<td class="text-left"><span id="type' + o + '">'+moment(data[o].appTime).format('YYYY-MM-DD')+'</span></td>'+
+                   '<td class="text-left"><strong>申请状态<strong></td>'+
+                   '<td class="text-left"><span id="chandi' + o + '">' + str +
+            '</span></td>'+
+                   '<td class="text-left"><strong>审核民政局编号</strong></td>'+
+                   '<td class="text-left"><span id="cangku' + o + '">' + data[o].CiId +
+            '</span></td></tr>'+
+                  '</tbody></table>').appendTo("#allRecord");
+            }
+          //   $('<tr>'
+          //     +'<td><b>身份证号:</b></td>'
+          //   +'<td id="userId'+o+'" class="text-left">'+data[o].userId+'</td>'
+          //     +'<td><b>姓名:</b></td>'
+          //   +'<td class="text-left">'+data[o].name+'</td>'
+          //     +'<td><b>住址:</b></td>'
+          //   +'<td class="text-left">'+data[o].district+"/"+data[o].county+"/"+data[o].township+'</td>'
+          //     +'<td><b>家庭人数:</b></td>'
+          //   +'<td class="text-left">'+data[o].familyNum+'</td>'
+          // +'</tr>'
+          // +'<tr>'
+          //   +'<td><b>家庭人均收入:</b></td>'
+          //   +'<td>'+data[o].averageIncome+'</td>'
+          //     +'<td><b>申请理由:</b></td>'
+          //   +'<td>'+data[o].reason+'</td>'
+          //     +'<td><b>申请时间 :</b></td>'
+          //   +'<td>'+moment(data[o].appTime).format('YYYY-MM-DD')+'</td>'
+          //     +'<td><b>申请状态:</b></td>'
+          //   +'<td>'+str+'</td>'
+          // +'</tr>'
+          // +'<tr>'
+          //     +'<td><b>审核民政局编号:</b></td>'
+          //   +'<td>'+data[o].CiId+'</td>'
+          // +'</tr>').appendTo("#allRecord");
           }
       }
   }).error(function(err){

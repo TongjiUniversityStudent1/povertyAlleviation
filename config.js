@@ -6,10 +6,10 @@ module.exports = {
     'mongoUrl': 'mongodb://localhost:27017/fupin',
     'socketHost': '192.168.1.100',
     'socketPort': 4999,
-    'controllerHost': '127.0.0.1',
+    'controllerHost': '10.1.3.207',
     'controllerPort': 6666,
 
-    'host': '127.0.0.1',
+    'host': '10.1.3.207',
     'port': 4000,
     'peers':["localhost:7051"],
     'path':'/channels/mychannel/chaincodes/',
