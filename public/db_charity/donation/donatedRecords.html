@@ -356,7 +356,7 @@ $(document).ready(function(){
         var reqBody={};
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/dbtest/charity/viewall',
+            url: '/dbtest/charity/viewall',
             data: reqBody,
             dataType: 'json',
             success: function(data){       
