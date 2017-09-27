@@ -357,7 +357,7 @@ $(document).ready(function(){
             };
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/dbtest/civilAdmin/agree',
+            url: '/dbtest/civilAdmin/agree',
             data: postBody,
             dataType: 'json',
             success: function(data){  
@@ -383,7 +383,7 @@ $(document).ready(function(){
         console.log(JSON.stringify(postBody));
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/dbtest/civilAdmin/agree',
+            url: '/dbtest/civilAdmin/agree',
             data: postBody,
             dataType: 'json',
             success: function(data){  

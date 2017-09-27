@@ -14,5 +14,5 @@ module.exports = {
     'peers':["localhost:7051"],
     'path':'/channels/mychannel/chaincodes/',
     'path2':'/channels/mychannel/transactions/',
-    'token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MDY1MTYxODMsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Im9yZzEiLCJpYXQiOjE1MDY0ODAxODN9.tJucetWlkvx1v1eb_d0b__nzdH3kzzSIWkSVDChiF9s'
+    'token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MDY1Mjk4NTUsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Im9yZzEiLCJpYXQiOjE1MDY0OTM4NTV9.U7aAaErUQurBMg2HSjBQryuKTrQkK8ODzeXJ4dlRtm8'
 };
